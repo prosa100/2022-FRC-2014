@@ -13,26 +13,38 @@ import edu.wpi.first.wpilibj.command.Subsystem;
  * @author All of us!
  */
 public class TankDrivebase extends Subsystem {
+
     Jaguar leftMotor, rightMotor;
-    
-    public TankDrivebase(int leftMotorPort, int rightMotorPort){
+
+    public TankDrivebase(int leftMotorPort, int rightMotorPort) {
         leftMotor = new Jaguar(leftMotorPort);
         rightMotor = new Jaguar(rightMotorPort);
     }
-    
-    public void set(double leftSpeed, double rightSpeed){
-        leftMotor.set(leftSpeed);
-        rightMotor.set(rightSpeed);
+
+    public void set(double leftSpeed, double rightSpeed) {
+        if (!isFrontFlipped) {
+            leftMotor.set(leftSpeed);
+            rightMotor.set(rightSpeed);
+        } else {
+            leftMotor.set(-rightSpeed);
+            rightMotor.set(-leftSpeed);
+        }
     }
-    
-    public void stop(){
-        set(0,0);
+
+    public void stop() {
+        set(0, 0);
     }
-    
+
+    boolean isFrontFlipped = false;
+
+    public boolean flipFront() {
+        //Good code!
+        return isFrontFlipped = !isFrontFlipped;
+        //no no code
+        //return frontFlipped^=true;
+    }
     public void initDefaultCommand() {
         // Set the default command for a subsystem here.
         //setDefaultCommand(new MySpecialCommand());
     }
-    
-    
 }
