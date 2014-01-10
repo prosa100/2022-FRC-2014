@@ -1,9 +1,9 @@
 
 package org.usfirst.frc2022_2014;
 
-import edu.wpi.first.wpilibj.buttons.Button;
-import edu.wpi.first.wpilibj.buttons.DigitalIOButton;
+import edu.wpi.first.wpilibj.buttons.JoystickButton;
 import org.usfirst.frc2022_2014.custom.Xbawks;
+import org.usfirst.frc2022_2014.commands.PinballShooterController;
 
 /**
  * This class is the glue that binds the controls on the physical operator
@@ -45,5 +45,8 @@ public class OI {
     // Start the command when the button is released  and let it run the command
     // until it is finished as determined by it's isFinished method.
     // button.whenReleased(new ExampleCommand());
+    public OI(){
+        JoystickButton fireButton = xbawks.GetRightBumper();
+        fireButton.whenPressed(new PinballShooterController());
+    }
 }
-
