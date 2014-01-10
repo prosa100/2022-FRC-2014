@@ -33,12 +33,14 @@ public class RobotMain extends IterativeRobot {
     public void robotInit() {
         // instantiate the command used for the autonomous period
         autonomousCommand = new ExampleCommand();
-
+        
         // Initialize all subsystems
         CommandBase.init();
     }
 
     public void autonomousInit() {
+        //set the pinball shooter
+        CommandBase.shooter.reset();
         // schedule the autonomous command (example)
         autonomousCommand.start();
     }
