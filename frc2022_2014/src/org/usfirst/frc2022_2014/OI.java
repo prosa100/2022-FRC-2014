@@ -2,8 +2,10 @@
 package org.usfirst.frc2022_2014;
 
 import edu.wpi.first.wpilibj.buttons.JoystickButton;
+import org.usfirst.frc2022_2014.commands.BallCollectionController;
 import org.usfirst.frc2022_2014.custom.Xbawks;
 import org.usfirst.frc2022_2014.commands.PinballShooterController;
+import org.usfirst.frc2022_2014.commands.WheelRetractorController;
 
 /**
  * This class is the glue that binds the controls on the physical operator
@@ -47,6 +49,15 @@ public class OI {
     // button.whenReleased(new ExampleCommand());
     public OI(){
         JoystickButton fireButton = xbawks.GetRightBumper();
+        JoystickButton toggleRetractButton = xbawks.GetAButton();
+        JoystickButton collectButton = xbawks.GetBButton();
+        JoystickButton dispenseButton = xbawks.GetXButton();
+        
         fireButton.whenPressed(new PinballShooterController());
+        toggleRetractButton.whenPressed(new WheelRetractorController());
+        collectButton.whileHeld(new BallCollectionController(true));
+        dispenseButton.whileHeld(new BallCollectionController(false));
+        
+        
     }
 }

@@ -19,6 +19,10 @@ public class RobotMap {
     public static final int LeftMotorPort = 3;
     public static final int RightMotorPort = 2;
     public static final int ShooterPort = 15163;
+    public static final int RetractorPort = -1;
+    public static final int CollectorPort = -1;
+    public static final int backLimitSwitchPort = -1;
+    public static final int frontLimitSwitchPort = -1;
     
     /* For MecanumDrive
     public static final int FrontRightMotorPort = -1;
