@@ -5,17 +5,19 @@
  */
 
 package org.usfirst.frc2022_2014.custom;
+
+import edu.wpi.first.wpilibj.DigitalInput;
+
 /**
  *
  * @author Vjedi729
  */
-public class LimitSwitch {
-    public boolean isPressed(){
-        if(true){
-            return false;
-        }
-        else {
-            return true;
+public class LimitSwitch extends DigitalInput{
+
+    public LimitSwitch(int channel) {
+        super(channel);
+    }
+    public boolean isTriggered(){
+        return get();
         }
     }
-}
