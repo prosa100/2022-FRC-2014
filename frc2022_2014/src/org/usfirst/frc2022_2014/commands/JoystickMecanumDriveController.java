@@ -19,6 +19,13 @@ public class JoystickMecanumDriveController extends CommandBase {
 
     //process the input from Xbox controller's left and right thumbsticks for Mecanum
     private void doInput() {
+        if (oi.getXbawks().GetTriggers()<-0.5){
+            mecanumDrive.setMotorSpeedMultiplier(.25);
+        } else if (oi.getXbawks().GetTriggers()>0.5){
+            mecanumDrive.setMotorSpeedMultiplier(1);
+        } else {
+            mecanumDrive.setMotorSpeedMultiplier(.5);
+        }
         mecanumDrive.set(oi.getXbawks().GetLeftMagnitude(), oi.getXbawks().GetLeftAngle(true), oi.getXbawks().GetRightX());
     }
     

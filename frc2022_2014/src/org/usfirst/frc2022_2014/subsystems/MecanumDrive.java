@@ -19,6 +19,8 @@ public class MecanumDrive extends Subsystem {
     Jaguar backRight;
     Jaguar backLeft;
 
+    double motorSpeedMultiplier = 1;
+    
     public MecanumDrive(int frontRightPort, int frontLeftPort, int backRightPort, int backLeftPort) {
         frontRight = new Jaguar(frontRightPort);
         frontLeft = new Jaguar(frontLeftPort);
@@ -30,11 +32,19 @@ public class MecanumDrive extends Subsystem {
         set(0, 0, 0);
     }
     
+    public double getMotorSpeedMultiplier(){
+        return motorSpeedMultiplier;
+    }
+    
+    public void setMotorSpeedMultiplier(double value){
+        motorSpeedMultiplier=value;
+    }
+    
     public void set(double speed, double angle, double spin) {
-        frontLeft.set(speed*(Math.sin(angle+(Math.PI/4)))+spin);
-        frontRight.set(speed*(Math.cos(angle+(Math.PI/4)))-spin);
-        backRight.set(speed*(Math.sin(angle+(Math.PI/4)))-spin);
-        backLeft.set(speed*(Math.cos(angle+(Math.PI/4)))+spin);
+        frontLeft.set(motorSpeedMultiplier*(speed*(Math.sin(angle+(Math.PI/4)))+spin));
+        frontRight.set(motorSpeedMultiplier*(speed*(Math.cos(angle+(Math.PI/4)))-spin));
+        backRight.set(motorSpeedMultiplier*(speed*(Math.sin(angle+(Math.PI/4)))-spin));
+        backLeft.set(motorSpeedMultiplier*(speed*(Math.cos(angle+(Math.PI/4)))+spin));
     }
 
     // Put methods for controlling this subsystem
