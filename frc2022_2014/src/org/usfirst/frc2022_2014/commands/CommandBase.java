@@ -5,6 +5,7 @@ import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import org.usfirst.frc2022_2014.OI;
 import org.usfirst.frc2022_2014.RobotMap;
 import org.usfirst.frc2022_2014.subsystems.ExampleSubsystem;
+import org.usfirst.frc2022_2014.subsystems.PinballShooter;
 import org.usfirst.frc2022_2014.subsystems.TankDrivebase;
 
 /**
@@ -21,6 +22,7 @@ public abstract class CommandBase extends Command {
     // Create a single static instance of all of your subsystems
     public static ExampleSubsystem exampleSubsystem = new ExampleSubsystem();
     public static TankDrivebase tankDrivebase = new TankDrivebase(RobotMap.LeftMotorPort, RobotMap.RightMotorPort);
+    public static PinballShooter shooter = new PinballShooter(RobotMap.ShooterPort);
     //public static MecanumDrive mecanumDrive = new MecanumDrive(RobotMap.FrontLeftMotorPort, RobotMap.FrontRightMotorPort, RobotMap.BackLeftMotorPort, RobotMap.BackRightMotorPort);
     
     public static void init() {
