@@ -20,12 +20,13 @@ public class JoystickMecanumDriveController extends CommandBase {
     //process the input from Xbox controller's left and right thumbsticks for Mecanum
     private void doInput() {
         if (oi.getXbawks().GetTriggers()<-0.5){
-        mecanumDrive.set(oi.getXbawks().GetLeftMagnitude()/4, oi.getXbawks().GetLeftAngle(true), oi.getXbawks().GetRightX()/4);
+            mecanumDrive.setMotorSpeedMultiplier(.25);
         } else if (oi.getXbawks().GetTriggers()>0.5){
-        mecanumDrive.set(oi.getXbawks().GetLeftMagnitude(), oi.getXbawks().GetLeftAngle(true), oi.getXbawks().GetRightX());
+            mecanumDrive.setMotorSpeedMultiplier(1);
         } else {
-        mecanumDrive.set(oi.getXbawks().GetLeftMagnitude()/2, oi.getXbawks().GetLeftAngle(true), oi.getXbawks().GetRightX()/2);
+            mecanumDrive.setMotorSpeedMultiplier(.5);
         }
+        mecanumDrive.set(oi.getXbawks().GetLeftMagnitude(), oi.getXbawks().GetLeftAngle(true), oi.getXbawks().GetRightX());
     }
     
     // Called just before this Command runs the first time
