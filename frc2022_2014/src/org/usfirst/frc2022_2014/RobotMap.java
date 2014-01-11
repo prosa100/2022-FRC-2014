@@ -24,10 +24,10 @@ public class RobotMap {
     public static final int backLimitSwitchPort = -1;
     public static final int frontLimitSwitchPort = -1;
     
-    //* For MecanumDrive
+    /* For MecanumDrive */
     public static final int FrontRightMotorPort = -1;
     public static final int FrontLeftMotorPort = -1;
     public static final int BackLeftMotorPort = -1;
     public static final int BackRightMotorPort = -1;
-    //*/ 
+    // 
 }

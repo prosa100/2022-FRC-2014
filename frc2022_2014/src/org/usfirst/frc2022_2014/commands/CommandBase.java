@@ -8,6 +8,7 @@ import org.usfirst.frc2022_2014.subsystems.ExampleSubsystem;
 import org.usfirst.frc2022_2014.subsystems.PinballShooter;
 import org.usfirst.frc2022_2014.subsystems.TankDrivebase;
 import org.usfirst.frc2022_2014.subsystems.BallCollection;
+import org.usfirst.frc2022_2014.subsystems.MecanumDrive;
 
 /**
  * The base for all commands. All atomic commands should subclass CommandBase.
@@ -25,7 +26,7 @@ public abstract class CommandBase extends Command {
     public static TankDrivebase tankDrivebase = new TankDrivebase(RobotMap.LeftMotorPort, RobotMap.RightMotorPort);
     public static PinballShooter shooter = new PinballShooter(RobotMap.ShooterPort);
     public static BallCollection collector = new BallCollection(RobotMap.CollectorPort,RobotMap.RetractorPort, RobotMap.backLimitSwitchPort, RobotMap.frontLimitSwitchPort);
-    //public static MecanumDrive mecanumDrive = new MecanumDrive(RobotMap.FrontLeftMotorPort, RobotMap.FrontRightMotorPort, RobotMap.BackLeftMotorPort, RobotMap.BackRightMotorPort);
+    public static MecanumDrive mecanumDrive = new MecanumDrive(RobotMap.FrontLeftMotorPort, RobotMap.FrontRightMotorPort, RobotMap.BackLeftMotorPort, RobotMap.BackRightMotorPort);
     
     public static void init() {
         // This MUST be here. If the OI creates Commands (which it very likely
