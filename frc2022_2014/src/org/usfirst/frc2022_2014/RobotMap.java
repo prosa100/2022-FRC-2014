@@ -7,6 +7,7 @@ package org.usfirst.frc2022_2014;
  * floating around.
  */
 public class RobotMap {
+    // If the port isn't set yet, make it -1
     // For example to map the left and right motors, you could define the
     // following variables to use with your drivetrain subsystem.
     // public static final int leftMotor = 1;
@@ -18,11 +19,19 @@ public class RobotMap {
     // public static final int rangefinderModule = 1;
     public static final int LeftMotorPort = 3;
     public static final int RightMotorPort = 2;
-    public static final int ShooterPort = 15163;
+    public static final int ShooterPort = -1;
     public static final int RetractorPort = -1;
     public static final int CollectorPort = -1;
-    public static final int backLimitSwitchPort = -1;
-    public static final int frontLimitSwitchPort = -1;
+    public static final int SolenoidPort1 = -1;
+    public static final int SolenoidPort2 = -1;
+    public static final int BackLimitSwitchPort = -1;
+    public static final int FrontLimitSwitchPort = -1;
+    
+    public static final int CompressSwitchChannel = -1;
+    public static final int CompressRelayChannel = -1;
+    public static final int LockRelayChannel = -1;
+    public static final int OutLimitSwitchChannel = -1;
+    public static final int InLimitSwitchChannel = -1;
     
     /* For MecanumDrive */
     public static final int FrontRightMotorPort = -1;

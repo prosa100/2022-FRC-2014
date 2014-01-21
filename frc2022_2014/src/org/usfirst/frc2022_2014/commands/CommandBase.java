@@ -8,6 +8,7 @@ import org.usfirst.frc2022_2014.subsystems.ExampleSubsystem;
 import org.usfirst.frc2022_2014.subsystems.PinballShooter;
 import org.usfirst.frc2022_2014.subsystems.TankDrivebase;
 import org.usfirst.frc2022_2014.subsystems.BallCollection;
+import org.usfirst.frc2022_2014.subsystems.CompressorSubsystem;
 import org.usfirst.frc2022_2014.subsystems.MecanumDrive;
 
 /**
@@ -25,7 +26,8 @@ public abstract class CommandBase extends Command {
     public static ExampleSubsystem exampleSubsystem = new ExampleSubsystem();
     public static TankDrivebase tankDrivebase = new TankDrivebase(RobotMap.LeftMotorPort, RobotMap.RightMotorPort);
     public static PinballShooter shooter = new PinballShooter(RobotMap.ShooterPort);
-    public static BallCollection collector = new BallCollection(RobotMap.CollectorPort,RobotMap.RetractorPort, RobotMap.backLimitSwitchPort, RobotMap.frontLimitSwitchPort);
+    public static BallCollection collector = new BallCollection(RobotMap.CollectorPort,RobotMap.RetractorPort, RobotMap.BackLimitSwitchPort, RobotMap.FrontLimitSwitchPort);
+    public static CompressorSubsystem compressor = new CompressorSubsystem(RobotMap.SolenoidPort1, RobotMap.SolenoidPort1, RobotMap.CompressSwitchChannel, RobotMap.CompressRelayChannel,RobotMap.LockRelayChannel, RobotMap.OutLimitSwitchChannel, RobotMap.InLimitSwitchChannel);
     public static MecanumDrive mecanumDrive = new MecanumDrive(RobotMap.FrontLeftMotorPort, RobotMap.FrontRightMotorPort, RobotMap.BackLeftMotorPort, RobotMap.BackRightMotorPort);
     
     public static void init() {
@@ -35,6 +37,8 @@ public abstract class CommandBase extends Command {
         // yet. Thus, their requires() statements may grab null pointers. Bad
         // news. Don't move it.
         oi = new OI();
+        
+        compressor.start();
 
         // Show what command your subsystem is running on the SmartDashboard
         SmartDashboard.putData(exampleSubsystem);
