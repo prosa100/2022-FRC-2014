@@ -1,0 +1,9 @@
+FindBall[i_] := 
+ Last /@ (ComponentMeasurements[
+     DeleteSmallComponents[
+      ChanVeseBinarize[i, 
+       TargetColor -> Blue]], {"BoundingDiskCenter", 
+      "BoundingDiskRadius"}] /. Rule -> List)
+i = CurrentImage[]
+Apply[Disk, FindBall[%], {1}]
+Show[i, Graphics[{Orange, %}]]
