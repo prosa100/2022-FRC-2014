@@ -41,10 +41,10 @@ public class MecanumDrive extends Subsystem {
     }
     
     public void set(double speed, double angle, double spin) {
-        frontLeft.set(motorSpeedMultiplier*(speed*(Math.sin(angle+(Math.PI/4)))+spin));
-        frontRight.set(motorSpeedMultiplier*(speed*(Math.cos(angle+(Math.PI/4)))-spin));
-        backRight.set(motorSpeedMultiplier*(speed*(Math.sin(angle+(Math.PI/4)))+spin));
-        backLeft.set(motorSpeedMultiplier*(speed*(Math.cos(angle+(Math.PI/4)))-spin));
+        frontLeft.set(-motorSpeedMultiplier*speed*(Math.sin(angle+(Math.PI/4)))+spin);
+        frontRight.set(-motorSpeedMultiplier*speed*(Math.cos(angle+(Math.PI/4)))-spin);
+        backRight.set(motorSpeedMultiplier*speed*(Math.sin(angle+(Math.PI/4)))+spin);
+        backLeft.set(motorSpeedMultiplier*speed*(Math.cos(angle+(Math.PI/4)))-spin);
     }
 
     // Put methods for controlling this subsystem
