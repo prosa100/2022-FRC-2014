@@ -43,6 +43,10 @@ public class BallCollection extends Subsystem
         isDown = true;
     }
     
+    public void moveRetractor(float speed){
+        retractor.set(speed);
+    }
+    
     public void stopRetractor()
     {
         retractor.set(0);
