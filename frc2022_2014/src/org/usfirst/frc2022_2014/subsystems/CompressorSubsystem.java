@@ -43,13 +43,14 @@ public class CompressorSubsystem extends Subsystem {
     
     public void start(){
         compressor.start();
+        relayOn();
         dsol.set(DoubleSolenoid.Value.kOff);
     }
     
     public void stop(){
         dsol.set(DoubleSolenoid.Value.kOff);
         compressor.stop();
-        spikerelay.set(Relay.Value.kOff);
+        relayOff();
     }
     
     public void relayOn(){
@@ -60,7 +61,13 @@ public class CompressorSubsystem extends Subsystem {
         spikerelay.set(Relay.Value.kOff);
     }
     
-    public void load()
+    public void pistonOut(){
+        forwardSolenoid();
+    }
+    
+    public void pistonIn(){
+        backwardSolenoid();
+    }
     
     public void closeSolenoid(){
         dsol.set(DoubleSolenoid.Value.kOff);
@@ -75,6 +82,6 @@ public class CompressorSubsystem extends Subsystem {
     }
     
     public void initDefaultCommand() {
-        
+        //None needed
     }
 }

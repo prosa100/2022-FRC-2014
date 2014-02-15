@@ -29,7 +29,7 @@ public abstract class CommandBase extends Command {
     //public static TankDrivebase tankDrivebase = new TankDrivebase(RobotMap.LeftMotorPort, RobotMap.RightMotorPort);
     public static PinballShooter shooter = new PinballShooter(RobotMap.ShooterPort);
     public static BallCollection collector = new BallCollection(RobotMap.CollectorPort,RobotMap.RetractorPort, RobotMap.BallCollectorLimitSwitch, RobotMap.RetractorLimitSwitchUp, RobotMap.RetractorLimitSwitchDown);
-    //public static CompressorSubsystem compressor = new CompressorSubsystem(RobotMap.SolenoidPort1, RobotMap.SolenoidPort1, RobotMap.CompressSwitchChannel, RobotMap.CompressRelayChannel,RobotMap.LockRelayChannel, RobotMap.OutLimitSwitchChannel, RobotMap.InLimitSwitchChannel);
+    public static CompressorSubsystem compressor = new CompressorSubsystem(RobotMap.SolenoidPort1, RobotMap.SolenoidPort1, RobotMap.CompressSpikeChannel, RobotMap.CompressSwitchChannel,RobotMap.CompressRelayChannel);
     public static MecanumDrive mecanumDrive = new MecanumDrive(RobotMap.FrontLeftMotorPort, RobotMap.FrontRightMotorPort, RobotMap.BackLeftMotorPort, RobotMap.BackRightMotorPort);
     
     public static void init() {

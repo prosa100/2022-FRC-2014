@@ -30,7 +30,7 @@ public class RobotMap {
     public static final int BallCollectorLimitSwitch = 3; //Digital Side Car
     public static final int CompressSwitchChannel = 7; 
     public static final int CompressRelayChannel = 6; 
-    public static final int LockRelayChannel = 5; 
+    public static final int CompressSpikeChannel = 5; 
     public static final int ArmLimitSwitchUp = 2; //Digital Side Car Digital IO
     public static final int ArmLimitSwitchDown = 1; //Digital Side Car Digital IO
     public static final int TopEncoderAngle = 1;
