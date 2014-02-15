@@ -33,6 +33,8 @@ public class RobotMap {
     public static final int OutLimitSwitchChannel = -1;
     public static final int InLimitSwitchChannel = -1;
     
+    public static final int TopEncoderAngle = 1;
+    
     /* For MecanumDrive */
     public static final int FrontRightMotorPort = 1;
     public static final int FrontLeftMotorPort = 4;
