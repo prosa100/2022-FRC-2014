@@ -37,7 +37,6 @@ public class PinballShooter extends Subsystem {
     }
     
     public void fire() {
-        //let go of spring and reset. 
         reset();
     }
     

@@ -86,13 +86,13 @@ public class AimerArm extends PIDSubsystem{
     
     public void moveArmUp(){
         while(!TopLimitSwitch.isTriggered()){
-            moveArm(.5);
+            moveArm(.25);
         }
     }
     
     public void moveArmDown(){
         while(!TopLimitSwitch.isTriggered()){
-            moveArm(-.5);
+            moveArm(-.25);
         }
     }
     

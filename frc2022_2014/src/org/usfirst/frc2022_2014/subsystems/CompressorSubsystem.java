@@ -25,7 +25,13 @@ public class CompressorSubsystem extends Subsystem {
     private LimitSwitch lswitchin;
 
     
-    public CompressorSubsystem(int sol1Port, int sol2Port, int compSwitchChannel, int compRelayChannel, int emlRelayChanel, int
+    public CompressorSubsystem(int solPort1, int solPort2, int compSpikePort, int compSwitchPort, int compRelayPort){
+        compressor = new Compressor(compSwitchPort, compRelayPort);
+        dsol = new DoubleSolenoid(solPort1, solPort2);
+        spikerelay = new Relay(compSpikePort);
+    }
+    
+    /*public CompressorSubsystem(int sol1Port, int sol2Port, int compSwitchChannel, int compRelayChannel, int emlRelayChanel, int
             limitSwitch1Channel, int limitSwitch2Channel){
         compressor = new Compressor(compSwitchChannel, compRelayChannel);
         dsol = new DoubleSolenoid(sol1Port, sol2Port);
@@ -33,7 +39,7 @@ public class CompressorSubsystem extends Subsystem {
         lswitchout = new LimitSwitch(limitSwitch1Channel);
         lswitchin = new LimitSwitch(limitSwitch2Channel);
         
-    }
+    }*/
     
     public void start(){
         compressor.start();
@@ -54,13 +60,7 @@ public class CompressorSubsystem extends Subsystem {
         spikerelay.set(Relay.Value.kOff);
     }
     
-    public boolean pistonOut(){
-        return lswitchout.isTriggered();
-    }
-    
-    public boolean pistonIn(){
-        return lswitchin.isTriggered();
-    }
+    public void load()
     
     public void closeSolenoid(){
         dsol.set(DoubleSolenoid.Value.kOff);
