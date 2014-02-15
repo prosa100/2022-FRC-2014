@@ -13,11 +13,11 @@ public class JoystickTankDriveController extends CommandBase {
     
     public JoystickTankDriveController() {
         // Use requires() here to declare subsystem dependencies
-        requires(tankDrivebase);
+        //requires(tankDrivebase);
     }
 
     private void doInput(){
-        tankDrivebase.set(oi.getXbawks().GetLeftY(), oi.getXbawks().GetRightY());
+        //tankDrivebase.set(oi.getXbawks().GetLeftY(), oi.getXbawks().GetRightY());
     }
     
     // Called just before this Command runs the first time
@@ -38,12 +38,12 @@ public class JoystickTankDriveController extends CommandBase {
     // Called once after isFinished returns true
     protected void end() {
         System.err.println("Who called me?!? They Suck!");
-        tankDrivebase.stop();
+        //tankDrivebase.stop();
     }
 
     // Called when another command which requires one or more of the same
     // subsystems is scheduled to run
     protected void interrupted() {
-        tankDrivebase.stop();
+        //tankDrivebase.stop();
     }
 }

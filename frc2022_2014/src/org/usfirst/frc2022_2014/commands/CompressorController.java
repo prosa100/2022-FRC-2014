@@ -14,18 +14,18 @@ The two subsystems for the pinball shooter and the compressor should be merged
 public class CompressorController extends CommandBase {
     
     public CompressorController(){
-        requires(compressor);
+        //requires(compressor);
 
     }
 
     // Called just before this Command runs the first time
     protected void initialize() {
-        compressor.relayOn();
+        //compressor.relayOn();
     }
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-        compressor.backwardSolenoid();
+        //compressor.backwardSolenoid();
     }
 
     // Make this return true when this Command no longer needs to run execute()
@@ -35,15 +35,15 @@ public class CompressorController extends CommandBase {
 
     // Called once after isFinished returns true
     protected void end() {
-        if(compressor.pistonOut()){
+        /*if(compressor.pistonOut()){
             compressor.forwardSolenoid();
             compressor.stop();
-            }
+            }*/
     }
 
     // Called when another command which requires one or more of the same
     // subsystems is scheduled to run
     protected void interrupted() {
-        compressor.stop();
+        //compressor.stop();
     }
 }

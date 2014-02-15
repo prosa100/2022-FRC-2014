@@ -17,23 +17,26 @@ public class RobotMap {
     // number and the module. For example you with a rangefinder:
     // public static final int rangefinderPort = 1;
     // public static final int rangefinderModule = 1;
-    public static final int LeftMotorPort = 3;
-    public static final int RightMotorPort = 2;
-    public static final int ShooterPort = -1;
-    public static final int RetractorPort = -1;
-    public static final int CollectorPort = -1;
-    public static final int SolenoidPort1 = -1;
-    public static final int SolenoidPort2 = -1;
-    public static final int BackLimitSwitchPort = -1;
-    public static final int FrontLimitSwitchPort = -1;
+    //public static final int LeftMotorPort = 92;
+    //public static final int RightMotorPort = 93;
+    public static final int ShooterPort = 1; //Digital Side Car
+    public static final int RetractorPort = 8;
+    public static final int CollectorPort = 7;
+    public static final int SolenoidPort1 = 1;
+    public static final int SolenoidPort2 = 2;
+    public static final int BackLimitSwitchPort = 8;
+    public static final int FrontLimitSwitchPort = 7;
+    public static final int AimerArmMotorPort = 5;
     
-    public static final int CompressSwitchChannel = -1;
-    public static final int CompressRelayChannel = -1;
-    public static final int LockRelayChannel = -1;
-    public static final int OutLimitSwitchChannel = -1;
-    public static final int InLimitSwitchChannel = -1;
-    
+    public static final int CompressSwitchChannel = 7;
+    public static final int CompressRelayChannel = 6;
+    public static final int LockRelayChannel = 5;
+    public static final int OutLimitSwitchChannel = 2;
+    public static final int InLimitSwitchChannel = 1;
     public static final int TopEncoderAngle = 1;
+    
+    //9 pwm
+    //1 solenoid
     
     /* For MecanumDrive */
     public static final int FrontRightMotorPort = 1;
