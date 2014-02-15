@@ -12,7 +12,7 @@ package org.usfirst.frc2022_2014.commands;
 public class BallCollectionController extends CommandBase {
     private boolean isCollecting;
     public BallCollectionController(boolean isCollecting) {
-        requires(collector);
+        //requires(collector);
         this.isCollecting = isCollecting;
     }
     
@@ -22,8 +22,8 @@ public class BallCollectionController extends CommandBase {
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-        if(isCollecting) collector.collect();
-        else collector.dispense(); 
+        //if(isCollecting) collector.collect();
+        //else collector.dispense(); 
     }
 
     // Make this return true when this Command no longer needs to run execute()
@@ -33,12 +33,12 @@ public class BallCollectionController extends CommandBase {
 
     // Called once after isFinished returns true
     protected void end() {
-        collector.stopCollector();
+        //collector.stopCollector();
     }
 
     // Called when another command which requires one or more of the same
     // subsystems is scheduled to run
     protected void interrupted() {
-        collector.stopCollector();
+        //collector.stopCollector();
     }
 }

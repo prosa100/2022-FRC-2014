@@ -25,13 +25,17 @@ public class PinballShooterController extends CommandBase {
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-        shooter.fire();
-        isFired = true;
+        /*if(oi.getAttack().GetButton(2).get()){
+            shooter.emOn();
+        } else{
+            shooter.emOff();
+        }*/
+        shooter.emOn();
     }
 
     // Make this return true when this Command no longer needs to run execute()
     protected boolean isFinished() {
-        return isFired;
+        return false;
     }
 
     // Called once after isFinished returns true

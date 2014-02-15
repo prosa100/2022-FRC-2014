@@ -14,7 +14,7 @@ public class WheelRetractorController extends CommandBase {
     boolean isToggled;
     
     public WheelRetractorController() {
-        requires(collector);
+    //    requires(collector);
         isToggled = false;
     }
 
@@ -24,8 +24,8 @@ public class WheelRetractorController extends CommandBase {
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-        if (collector.isDown()) collector.moveCollectorUp();
-        else collector.moveCollectorDown();
+      //  if (collector.isDown()) collector.moveCollectorUp();
+        //else collector.moveCollectorDown();
         isToggled = true;
     }
 

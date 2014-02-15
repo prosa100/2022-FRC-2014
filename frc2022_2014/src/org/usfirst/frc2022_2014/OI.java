@@ -6,15 +6,21 @@ import org.usfirst.frc2022_2014.commands.BallCollectionController;
 import org.usfirst.frc2022_2014.custom.Xbawks;
 import org.usfirst.frc2022_2014.commands.PinballShooterController;
 import org.usfirst.frc2022_2014.commands.WheelRetractorController;
+import org.usfirst.frc2022_2014.custom.Attack3;
 
 /**
  * This class is the glue that binds the controls on the physical operator
  * interface to the commands and command groups that allow control of the robot.
  */
 public class OI {
-    Xbawks xbawks = new Xbawks(1);
+    private Xbawks xbawks = new Xbawks(1);
+    private Attack3 attack = new Attack3(2);
     public Xbawks getXbawks(){
         return xbawks;
+    }
+    
+    public Attack3 getAttack(){
+        return attack;
     }
     //// CREATING BUTTONS
     // One type of button is a joystick button which is any button on a joystick.
