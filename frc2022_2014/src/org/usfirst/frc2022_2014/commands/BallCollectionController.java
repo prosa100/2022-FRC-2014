@@ -5,11 +5,14 @@
  */
 package org.usfirst.frc2022_2014.commands;
 
+import org.usfirst.frc2022_2014.custom.Attack3;
+
 /**
  *
  * @author IMSA
  */
 public class BallCollectionController extends CommandBase {
+    Attack3 attack = oi.getAttack(); ;
     private boolean isCollecting;
     public BallCollectionController(boolean isCollecting) {
         requires(collector);
@@ -22,8 +25,10 @@ public class BallCollectionController extends CommandBase {
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-        if(isCollecting) collector.collect();
-        else collector.dispense(); 
+        while(attack.GetY()>0) {collector.moveRetractor((float)0.5);}
+        while(attack.GetY()<0) {collector.moveRetractor((float)-0.5);}
+        //if(isCollecting) collector.collect();
+        //else collector.dispense(); 
     }
 
     // Make this return true when this Command no longer needs to run execute()
@@ -33,12 +38,12 @@ public class BallCollectionController extends CommandBase {
 
     // Called once after isFinished returns true
     protected void end() {
-        collector.stopCollector();
+        //collector.stopCollector();
     }
 
     // Called when another command which requires one or more of the same
     // subsystems is scheduled to run
     protected void interrupted() {
-        collector.stopCollector();
+        //collector.stopCollector();
     }
 }

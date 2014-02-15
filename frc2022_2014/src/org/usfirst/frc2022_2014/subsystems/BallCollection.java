@@ -9,21 +9,23 @@ public class BallCollection extends Subsystem
     Jaguar collector, retractor;
     private final double RetractorSpeed = 0.5;
     private final double CollectorSpeed = 1;
-    LimitSwitch backLimitSwitch;
-    LimitSwitch frontLimitSwitch;
+    LimitSwitch retractorLimitSwitchUp;
+    LimitSwitch retractorLimitSwitchDown;
+    LimitSwitch ballStopLimitSwitch;
     private boolean isDown = false;
     
-    public BallCollection(int collectorPort, int retractorPort, int backLimitSwitchPort, int frontLimitSwitchPort) 
+    public BallCollection(int collectorPort, int retractorPort, int ballLimPort, int downLimPort, int upLimPort) 
     {
         collector = new Jaguar(collectorPort);
         retractor = new Jaguar(retractorPort);
-        frontLimitSwitch = new LimitSwitch(frontLimitSwitchPort);
-        backLimitSwitch = new LimitSwitch(backLimitSwitchPort);
+        retractorLimitSwitchUp = new LimitSwitch(upLimPort);
+        retractorLimitSwitchDown = new LimitSwitch(downLimPort);
+        ballStopLimitSwitch = new LimitSwitch(ballLimPort);
     }
     
     public void moveCollectorUp()
     {
-        while(!backLimitSwitch.isTriggered())
+        while(!retractorLimitSwitchUp.isTriggered())
         {
             retractor.set(-RetractorSpeed);
         }
@@ -33,12 +35,16 @@ public class BallCollection extends Subsystem
     
     public void moveCollectorDown()
     {
-        while (!backLimitSwitch.isTriggered())
+        while (!retractorLimitSwitchDown.isTriggered())
         {
             retractor.set(RetractorSpeed);
         }
         stopCollector();
         isDown = true;
+    }
+    
+    public void moveRetractor(float speed){
+        retractor.set(speed);
     }
     
     public void stopRetractor()
@@ -53,12 +59,16 @@ public class BallCollection extends Subsystem
     
     public void collect()
     {
-        collector.set(CollectorSpeed);
+        if(!ballStopLimitSwitch.isTriggered() && !retractorLimitSwitchUp.isTriggered()){
+            collector.set(CollectorSpeed);
+        }
     }
     
     public void dispense()
     {
-        collector.set(-CollectorSpeed);
+        if(!retractorLimitSwitchUp.isTriggered()){
+            collector.set(-CollectorSpeed);
+        }
     }
 
     public boolean isDown()

@@ -84,6 +84,18 @@ public class AimerArm extends PIDSubsystem{
 
     /// Mechanical function: no PID Loop
     
+    public void moveArmUp(){
+        while(!TopLimitSwitch.isTriggered()){
+            moveArm(.25);
+        }
+    }
+    
+    public void moveArmDown(){
+        while(!TopLimitSwitch.isTriggered()){
+            moveArm(-.25);
+        }
+    }
+    
     public void moveArm(double speed){
         this.usePID(false);
         aimerArmMotor.set(speed);
