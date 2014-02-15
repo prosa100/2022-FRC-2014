@@ -14,18 +14,20 @@ import org.usfirst.frc2022_2014.commands.CommandBase;
 public class SimpleAutoAimer extends CommandBase {
     
     public SimpleAutoAimer() {
-        //requires(aimArm);
+        requires(aimArm);
         // Use requires() here to declare subsystem dependencies
         // eg. requires(chassis);
     }
 
     // Called just before this Command runs the first time
     protected void initialize() {
+        aimArm.moveArmDown();
         //aimArm.moveArm(Math.PI/4 - aimArm.getRawAngleOfElevation()); //Maybe add to subsystem?
     }
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
+        aimArm.moveArmDown();
         //aimArm.moveArm(Math.PI/4 - aimArm.getRawAngleOfElevation());
     }
 

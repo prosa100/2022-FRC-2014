@@ -19,20 +19,20 @@ public class RobotMap {
     // public static final int rangefinderModule = 1;
     //public static final int LeftMotorPort = 92;
     //public static final int RightMotorPort = 93;
-    public static final int ShooterPort = 1; //Digital Side Car
-    public static final int RetractorPort = 8;
-    public static final int CollectorPort = 7;
-    public static final int SolenoidPort1 = 1;
-    public static final int SolenoidPort2 = 2;
-    public static final int BackLimitSwitchPort = 8;
-    public static final int FrontLimitSwitchPort = 7;
-    public static final int AimerArmMotorPort = 5;
-    
-    public static final int CompressSwitchChannel = 7;
-    public static final int CompressRelayChannel = 6;
-    public static final int LockRelayChannel = 5;
-    public static final int OutLimitSwitchChannel = 2;
-    public static final int InLimitSwitchChannel = 1;
+    public static final int ShooterPort = 1; //Digital Side Car Relay Ports0
+    public static final int RetractorPort = 6; //Digital Side Car PWM Out
+    public static final int CollectorPort = 7; //Digital Side Car PWM Out
+    public static final int SolenoidPort1 = 1; //Solenoid Breakout
+    public static final int SolenoidPort2 = 2; //Solenoid Breakout
+    public static final int RetractorLimitSwitchUp = 2; //Digital Side Car Digital IO
+    public static final int RetractorLimitSwitchDown = 1; //Digital Side Car Digital IO
+    public static final int AimerArmMotorPort = 5; //Digital Side Car PWM Out
+    public static final int BallCollectorLimitSwitch = 3; //Digital Side Car
+    public static final int CompressSwitchChannel = 7; 
+    public static final int CompressRelayChannel = 6; 
+    public static final int LockRelayChannel = 5; 
+    public static final int ArmLimitSwitchUp = 2; //Digital Side Car Digital IO
+    public static final int ArmLimitSwitchDown = 1; //Digital Side Car Digital IO
     public static final int TopEncoderAngle = 1;
     
     //9 pwm

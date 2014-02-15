@@ -25,10 +25,10 @@ public abstract class CommandBase extends Command {
     public static OI oi;
     // Create a single static instance of all of your subsystems
     //public static ExampleSubsystem exampleSubsystem = new ExampleSubsystem();
-    //public static AimerArm aimArm = new AimerArm(RobotMap.AimerArmMotorPort);
+    public static AimerArm aimArm = new AimerArm(RobotMap.AimerArmMotorPort);
     //public static TankDrivebase tankDrivebase = new TankDrivebase(RobotMap.LeftMotorPort, RobotMap.RightMotorPort);
     public static PinballShooter shooter = new PinballShooter(RobotMap.ShooterPort);
-    //public static BallCollection collector = new BallCollection(RobotMap.CollectorPort,RobotMap.RetractorPort, RobotMap.BackLimitSwitchPort, RobotMap.FrontLimitSwitchPort);
+    public static BallCollection collector = new BallCollection(RobotMap.CollectorPort,RobotMap.RetractorPort, RobotMap.BallCollectorLimitSwitch, RobotMap.RetractorLimitSwitchUp, RobotMap.RetractorLimitSwitchDown);
     //public static CompressorSubsystem compressor = new CompressorSubsystem(RobotMap.SolenoidPort1, RobotMap.SolenoidPort1, RobotMap.CompressSwitchChannel, RobotMap.CompressRelayChannel,RobotMap.LockRelayChannel, RobotMap.OutLimitSwitchChannel, RobotMap.InLimitSwitchChannel);
     public static MecanumDrive mecanumDrive = new MecanumDrive(RobotMap.FrontLeftMotorPort, RobotMap.FrontRightMotorPort, RobotMap.BackLeftMotorPort, RobotMap.BackRightMotorPort);
     
