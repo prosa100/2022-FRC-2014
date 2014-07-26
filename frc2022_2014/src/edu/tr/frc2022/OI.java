@@ -113,7 +113,11 @@ public class OI {
     public boolean flipDrive() {
         return (isGC) ? flipDrive.flip(driveInput.getRawButton(8)) : flipDrive.flip(XBoXController.GetRightBumperValue());
     }
-    
+	
+    /***
+     * Gets the desired Speed Adjust
+     * @return Speed Adjust
+     */
     public double getAdjust(){
         
         double j = 0;
